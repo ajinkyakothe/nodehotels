@@ -1,0 +1,39 @@
+// console.log("server file is running");
+
+// //understanding of the callback function
+// function callBack() {
+//   console.log("Work done for main function");
+// }
+
+// const mains = (a, b, callBack) => {
+//   var res = a + b;
+//   console.log("res");
+//   callBack();
+// };
+
+// mains(2, 4, callBack);
+
+//inline function
+
+//  mains(2, 4, ()=>{console.log('coding done')});
+
+// var fs = require("fs");
+// var os = require("os");
+
+// var user = os.userInfo();
+// console.log(user);
+
+//creating and simple endpoint
+const express = require("express");
+const app = express();
+const PORT = 3000;
+
+app.get("/", (req, res) => {
+  console.log("Simple endpoint");
+  res.send("Simple endpoint this response given by server");
+});
+
+app.listen(PORT, function (err) {
+  if (err) console.log("Error in server setup");
+  console.log("Server listening on Port", PORT);
+});
